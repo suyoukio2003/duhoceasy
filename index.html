@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>duhoceasy - Trang web Du học</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>duhoceasy - Trang web Du học</h1>
+    </header>
+
+    <section id="banner">
+        <!-- Thêm hình ảnh cho phần banner -->
+        <img src="image/banner.jpg" alt="duhoceasy banner">
+        <h2>Chào mừng đến với duhoceasy!</h2>
+        <p>
+            duhoceasy cung cấp thông tin về các chương trình du học và các điều kiện sống ở các quốc gia khác nhau.
+        </p>
+    </section>
+
+    <section id="introduction">
+        <h2>Giới thiệu</h2>
+        <p>
+            Xin chào tất cả mọi người! Trang web duhoceasy này là trang web nằm trong dự án môn học phát triển cá nhân của nhóm chúng mình. Với mục đích cung cấp thêm thông tin về các quốc gia cho những đối tượng có nhu cầu đi du học và định cư ở nước ngoài, hi vọng trang web sẽ cung cấp cho mọi người những thông tin cần thiết
+        </p>
+    </section>
+
+    <section id="countries">
+        <h2>Mục lục các quốc gia</h2>
+        <div class="country-card" onclick="goToCountry('country1.html')">
+            <img src="image/japan.jpg" alt="Country 1">
+            <h3>Nhật Bản</h3>
+        </div>
+        <div class="country-card" onclick="goToCountry('country2.html')">
+            <img src="image/usa.jpg" alt="Country 2">
+            <h3>Hoa Kỳ</h3>
+        </div>
+        <div class="country-card" onclick="goToCountry('country3.html')">
+            <img src="image/australia.jpeg" alt="Country 3">
+            <h3>Úc</h3>
+        </div>
+        <div class="country-card" onclick="goToCountry('country4.html')">
+            <img src="image/canada.jpg" alt="Country 4">
+            <h3>Canada</h3>
+        </div>
+        <div class="country-card" onclick="goToCountry('country5.html')">
+            <img src="image/china.jpg" alt="Country 5">
+            <h3>Trung Quốc</h3>
+        </div>
+        <div class="country-card" onclick="goToCountry('country6.html')">
+            <img src="image/korea.jpg" alt="Country 6">
+            <h3>Hàn Quốc</h3>
+        </div>
+        <div class="country-card" onclick="goToCountry('country7.html')">
+            <img src="image/england.jpg" alt="Country 7">
+            <h3>Anh</h3>
+        </div>
+        <div class="country-card" onclick="goToCountry('country8.html')">
+            <img src="image/russia.jpg" alt="Country 8">
+            <h3>Nga</h3>
+        </div>
+        <div class="country-card" onclick="goToCountry('country9.html')">
+            <img src="image/france.jpg" alt="Country 9">
+            <h3>Pháp</h3>
+        </div>
+        <div class="country-card" onclick="goToCountry('country10.html')">
+            <img src="image/germany.jpg" alt="Country 10">
+            <h3>Đức</h3>
+        </div>
+        <div class="country-card" onclick="goToCountry('country11.html')">
+            <img src="image/netherland.jpg" alt="Country 11">
+            <h3>Hà Lan</h3>
+        </div>
+        <!-- Thêm các country-card cho các nước khác -->
+    </section>
+    <div class="container">
+        <div class="left-section">
+            <h2>Giới thiệu thông tin nhóm xây dựng trang web</h2>
+            Xin chào các bạn! Nhóm mình là nhóm VoF - Vision of Future, chủ quản của trang web này. Chúng mình cùng nhau tạo ra trang web này nhằm mục đích cung cấp thông tin để giúp đỡ một phần nào đó cho các bạn sinh viên hay những công dân có nhu cầu đi du học hay định cư ở nước ngoài. Rất mong nhận được sự giúp đỡ của tất cả mọi người!
+        </div>
+    
+        <div class="right-section">
+            <section id="feedback">
+                <h2>Gửi phản hồi</h2>
+                <form id="feedbackForm">
+                    <label for="name">Họ và tên:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Nội dung phản hồi:</label>
+                    <input type="message" id="message" name="message" required>
+
+                    <button type="submit">Gửi</button>
+                </form>
+            </section>
+        </div>
+    </div>
+    <footer>
+        <p>Bản quyền © 2023 duhoceasy. Được tạo bởi các thành viên nhóm 6 - VoF - Vision of Future</p>
+    </footer>
+
+    <script>
+        function goToCountry(countryPage) {
+            window.location.href = countryPage;
+        }
+    </script>
+    <!-- Thêm thư viện EmailJS -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        // Khởi tạo EmailJS với API Key của bạn
+        emailjs.init("fWnnE7c5fb0DatsKT");
+
+        // Xử lý khi người dùng gửi biểu mẫu
+        document.getElementById('feedbackForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            sendFeedback();
+        });
+
+        // Gửi dữ liệu phản hồi bằng EmailJS
+        function sendFeedback() {
+            const form = document.getElementById('feedbackForm');
+            const formData = new FormData(form);
+            const feedbackData = {};
+
+            formData.forEach((value, key) => {
+                feedbackData[key] = value;
+            });
+
+            // Gửi email
+            emailjs.send("service_2ijk2lc", "template_f25jxl4", feedbackData)
+                .then(function (response) {
+                    console.log('Phản hồi đã được gửi thành công:', response);
+                    alert('Cảm ơn bạn đã gửi phản hồi!'); // Thông báo thành công
+                    form.reset(); // Xóa các trường trong biểu mẫu sau khi gửi
+                }, function (error) {
+                    console.error('Lỗi khi gửi phản hồi:', error);
+                    alert('Đã xảy ra lỗi khi gửi phản hồi. Vui lòng thử lại sau.'); // Thông báo lỗi
+                });
+        }
+    </script>
+</body>
+</html>

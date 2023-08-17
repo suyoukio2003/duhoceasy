@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+section {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    color: #555;
+}
+
+/* Các phần style trước đó giữ nguyên */
+
+#banner {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f0f0f0; /* Thêm màu nền cho phần banner */
+}
+
+#banner img {
+    max-width: 100%;
+    max-height: 300px; /* Giới hạn chiều cao của hình ảnh */
+    width: auto;
+    height: auto;
+    margin: 0 auto; /* Căn giữa hình ảnh theo chiều ngang */
+    display: block; /* Loại bỏ khoảng trống dư thừa dưới hình ảnh */
+}
+
+#banner h2 {
+    color: #333;
+    margin-top: 1rem; /* Tăng khoảng cách giữa hình ảnh và tiêu đề */
+}
+
+/* Các phần style khác giữ nguyên */
+
+
+#introduction {
+    background-color: #f9f9f9;
+}
+
+/* Các phần style trước đó giữ nguyên */
+
+#countries {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Chia thành 4 cột */
+    gap: 20px;
+}
+
+.country-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.country-card img {
+    max-width: 100%;
+    height: 120px; /* Giới hạn chiều cao của hình ảnh */
+    width: auto;
+    margin: 0 auto; /* Căn giữa hình ảnh theo chiều ngang */
+}
+
+.country-card h3 {
+    margin-top: 0.5rem;
+}
+
+/* Các phần style khác giữ nguyên */
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 1rem;
+}
+
+input, textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #444;
+}
+/* Định nghĩa các kiểu cho container chứa cả hai phần */
+.container {
+    display: flex;
+    max-width: 960px; /* Để giữ trang trung tâm và ngăn nó quá rộng */
+    margin: 0 auto; /* Canh giữa trang */
+}
+
+/* Định nghĩa kiểu cho phần bên trái (giới thiệu thông tin nhóm) */
+.left-section {
+    flex: 1; /* Phần tỷ lệ 1 (1/2 màn hình) */
+    padding: 20px;
+    background-color: #f2f2f2; /* Màu nền xám nhạt */
+}
+
+/* Định nghĩa kiểu cho phần bên phải (biểu mẫu gửi phản hồi) */
+.right-section {
+    flex: 1; /* Phần tỷ lệ 1 (1/2 màn hình) */
+    padding: 20px;
+    background-color: #ffffff; /* Màu nền trắng */
+}
+
